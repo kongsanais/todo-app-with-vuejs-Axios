@@ -14,20 +14,17 @@
                   v-for="(item, index) in todos"
                   :key="index"
                 >
-                  <v-checkbox v-model="value" value="value"></v-checkbox>
-                  <span>{{ item.title }}</span>
+                  <v-checkbox v-model="item.completed"></v-checkbox>
+                  <span>{{ item.title }} :</span>
                   <v-spacer></v-spacer>
-                  <v-btn color="error">x</v-btn>
+                  <v-btn color="error" @click="$emit('onRemove', item.id)" >x</v-btn>
                 </v-row>
               </v-card-text>
 
-              <v-card-actions>
+
+              <v-card-actions>  
                 <v-list-item class="grow">
                   <v-list-item-avatar color="grey darken-3">
-                    <v-img
-                      class="elevation-6"
-                      src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=White&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light"
-                    ></v-img>
                   </v-list-item-avatar>
 
                   <v-list-item-content>
